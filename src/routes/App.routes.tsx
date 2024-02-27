@@ -8,7 +8,12 @@ const Stack = createStackNavigator<TAppRootParams>();
 
 const AppRoutes = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShadowVisible: true,
+        headerBackTitleVisible: false,
+        headerStatusBarHeight: 0,
+      }}>
       <Stack.Screen name={EAppRouter.ScreenName} component={Screen} />
     </Stack.Navigator>
   );

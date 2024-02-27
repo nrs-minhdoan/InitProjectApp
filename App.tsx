@@ -5,7 +5,7 @@
  * @format
  */
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import {I18nextProvider} from 'react-i18next';
 import {
   StyleSheet,
@@ -16,12 +16,17 @@ import {
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
+import SplashScreen from 'react-native-splash-screen';
 
 import i18n from 'translations/i18n';
 import RootRoutes from 'routes/Root.routes';
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
+
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
 
   return (
     <SafeAreaProvider>
